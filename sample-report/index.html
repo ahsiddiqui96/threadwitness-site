@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121619" media="(prefers-color-scheme: dark)">
+<title>Sample report · Thread Witness</title>
+<meta name="description" content="An illustrative excerpt of a Thread Witness weekly report for a fictional product, Northwind Cloud. All data is invented.">
+<link rel="canonical" href="https://threadwitness.com/sample-report/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thread Witness">
+<meta property="og:title" content="Sample report · Thread Witness">
+<meta property="og:description" content="An illustrative excerpt of a Thread Witness weekly report for a fictional product, Northwind Cloud. All data is invented.">
+<meta property="og:url" content="https://threadwitness.com/sample-report/">
+<meta property="og:image" content="https://threadwitness.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thread Witness wordmark: a thread passing through an eye, with the line: cited weekly reports on what users report in public.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample report · Thread Witness">
+<meta name="twitter:description" content="An illustrative excerpt of a Thread Witness weekly report for a fictional product, Northwind Cloud. All data is invented.">
+<meta name="twitter:image" content="https://threadwitness.com/assets/og.png">
+</head>
+<body class="page-sample-report">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="wordmark" href="/" aria-label="Thread Witness, home"><svg class="mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><path class="tw-eye" d="M3 16C7 8 25 8 29 16C25 24 7 24 3 16Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><circle class="tw-pupil" cx="16" cy="16" r="5" fill="currentColor"/><path class="tw-thread-gap" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tw-thread" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="2.6" stroke-linecap="round"/></svg><span class="wordmark-text">Thread<span class="wordmark-gap"> </span>Witness</span></a>
+<nav class="site-nav" aria-label="Main">
+<details class="menu">
+<summary><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
+<ul class="menu-list"><li><a href="/how-it-works/">How it works</a></li><li><a href="/sample-report/" aria-current="page">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/">Data sources</a></li></ul>
+</details>
+<ul class="nav-list"><li><a href="/how-it-works/">How it works</a></li><li><a href="/sample-report/" aria-current="page">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/">Data sources</a></li></ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap content">
+<div class="callout callout-sample" role="note">
+<p><strong>Illustrative sample. Fictional product, invented data.</strong>
+Northwind Cloud does not exist. Every name, tier, ID, number, error string, date and link on this page is made up to show the layout of a weekly report. Quotes are omitted from this public sample. In a real report every factual sentence links to the public post it rests on; a few citation markers such as [E14] are shown below, with an excerpt of the evidence appendix at the end.</p>
+</div>
+
+<div class="callout" role="note">
+<p><strong>How to read this</strong></p>
+<ul>
+<li>Priority (issues) and Demand (requests) run from 0 to 100.</li>
+<li>Reporters are unique people, not posts.</li>
+<li>Badges show whether a sentence is Reported, Aggregated, Inferred or Secondhand.</li>
+<li>S1 to S5 is severity, from safety or security (S1) to cosmetic (S5).</li>
+<li>The verifier tally at the end shows what was removed or rewritten before release.</li>
+</ul>
+</div>
+<article class="report" aria-labelledby="northwind-cloud-weekly-report"><h1 id="northwind-cloud-weekly-report">Northwind Cloud weekly report</h1>
+<p><strong>Report</strong> NWC-R-2026-W40 · <strong>Period</strong> 28 Sep to 4 Oct 2026, with a trailing 8-week window from 10 Aug 2026</p>
+<p><strong>Coverage</strong> 6 types of source (issue trackers, vendor forums, Q&amp;A sites, help-center communities, release notes, status pages), 1,904 posts scanned, 412 judged relevant, 187 unique reporters. 162 citations checked; every citation in the released report resolves and was verified. Before release: 5 claims removed, 3 rewritten, 1 downgraded. 0 safety-class topics pending human review.</p>
+<p><strong>Known gaps</strong> One community forum awaiting written permission. Sources that need a paid license, such as Reddit, are not read.</p>
+<p>Counts measure public discussion in the sources read, not incidence or failure rates.</p>
+<hr>
+<h2 id="executive-summary">Executive summary</h2>
+<p><strong>Headline.</strong> Sign-in loops on SSO sign-in rose for the second week, and 9 reporters described them this week. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<h3 id="top-issues">Top issues</h3>
+<div class="table-wrap" role="region" aria-label="Top issues, table 1" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Issue</th>
+<th>Severity</th>
+<th class="num">Priority</th>
+<th class="num">Reporters (week / 8 wk)</th>
+<th>Trend</th>
+<th>Status</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="id">NWC-ISS-4H8T2C</td>
+<td class="text">Sign-in loop after SSO sign-in, rising after certificate rotation</td>
+<td>S2</td>
+<td class="num">74</td>
+<td class="num">9 / 23</td>
+<td class="trend">↑ Rising</td>
+<td>Investigating</td>
+<td class="text">Reporters on the Gov tiers describe being unable to reach the console until an admin acts.</td>
+</tr>
+<tr>
+<td class="id">NWC-ISS-9P2W6M</td>
+<td class="text">Scheduled export jobs stall at 99%</td>
+<td>S3</td>
+<td class="num">58</td>
+<td class="num">4 / 17</td>
+<td class="trend">→ Stable</td>
+<td>Known</td>
+<td class="text">Reporters describe re-running exports by hand each morning.</td>
+</tr>
+<tr>
+<td class="id">NWC-ISS-3J7Q5R</td>
+<td class="text">Audit log search returns no results for ranges over 30 days</td>
+<td>S3</td>
+<td class="num">52</td>
+<td class="num">2 / 12</td>
+<td class="trend">→ Stable</td>
+<td>Fixed in 8.14.2</td>
+<td class="text">Fix shipped two weeks ago; too little volume before the fix to compare.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="top-requests">Top requests</h3>
+<div class="table-wrap" role="region" aria-label="Top requests, table 2" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Request</th>
+<th class="num">Demand</th>
+<th class="num">Requesters (8 wk)</th>
+<th>Trend</th>
+<th>Linked issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="id">NWC-FR-6D1K8V</td>
+<td class="text">Bulk role assignment from a CSV file</td>
+<td class="num">66</td>
+<td class="num">31</td>
+<td class="trend">↑ Rising</td>
+<td>None</td>
+</tr>
+<tr>
+<td class="id">NWC-FR-2M5X9B</td>
+<td class="text">Scheduled audit log export to an external log store</td>
+<td class="num">54</td>
+<td class="num">19</td>
+<td class="trend">→ Stable</td>
+<td class="id">NWC-ISS-3J7Q5R</td>
+</tr>
+<tr>
+<td class="id">NWC-FR-8F3N4T</td>
+<td class="text">Dark mode in the admin console</td>
+<td class="num">41</td>
+<td class="num">22</td>
+<td class="trend">→ Stable</td>
+<td>None</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="what-users-praise-in-development">What users praise (in development)</h3>
+<p><em>This section is in development and is not yet in production reports.</em></p>
+<div class="table-wrap" role="region" aria-label="What users praise (in development), table 3" tabindex="0"><table>
+<thead>
+<tr>
+<th>What users like</th>
+<th class="num">Reporters (8 wk)</th>
+<th>Badge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Role templates save setup time for new teams</td>
+<td class="num">14</td>
+<td><span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></td>
+</tr>
+<tr>
+<td class="text">Status page posts arrive quickly during incidents</td>
+<td class="num">9</td>
+<td><span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Safety flags.</strong> None this week. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<p><strong>Fix verification.</strong> NWC-ISS-3J7Q5R: Inconclusive (too little volume before the fix to compare). <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<p><strong>What changed</strong></p>
+<ul>
+<li>NWC-ISS-4H8T2C moved from 5 to 9 reporters this week, after the 8.14.1 release on 22 Sep. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+<li>NWC-FR-6D1K8V gained 7 new requesters, 4 of them on the Gov tiers. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+<li>NWC-ISS-3J7Q5R had 2 reporters this week, against 3 in the week before 8.14.2 shipped. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+</ul>
+<hr>
+<h2 id="deep-dive-nwc-iss-4h8t2c-sign-in-loop-after-sso-sign-in-rising-after-certificate-rotation">Deep dive: NWC-ISS-4H8T2C, sign-in loop after SSO sign-in, rising after certificate rotation</h2>
+<p><strong>Also called</strong> SSO redirect loop; login bounce after cert renewal · <strong>Severity</strong> S2 (data loss, lockout or unavailable), supported by 11 independent reporters · <strong>Status</strong> Investigating</p>
+<h3 id="priority-74-of-100-by-factor">Priority 74 of 100, by factor</h3>
+<div class="table-wrap" role="region" aria-label="Priority 74 of 100, by factor, table 4" tabindex="0"><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th class="num">Points</th>
+<th>In plain language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Severity</td>
+<td class="num">24.0</td>
+<td class="text">S2: reporters describe losing console access.</td>
+</tr>
+<tr>
+<td>Reach</td>
+<td class="num">22.7</td>
+<td class="text">23 unique reporters and 58 mentions in 8 weeks.</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td class="num">10.0</td>
+<td class="text">14 reporters in the last two weeks against 5 in the two before.</td>
+</tr>
+<tr>
+<td>Workaround value</td>
+<td class="num">6.5</td>
+<td class="text">The workaround with the most reports that it worked needs an admin.</td>
+</tr>
+<tr>
+<td>Corroboration</td>
+<td class="num">5.0</td>
+<td class="text">Two types of source each have 2 or more reporters.</td>
+</tr>
+<tr>
+<td>Recency</td>
+<td class="num">6.0</td>
+<td class="text">Most reports are from the last 14 days.</td>
+</tr>
+</tbody>
+</table></div>
+<p>What would change this: a low-burden workaround that 3 or more reporters say worked would lower Priority by about 3 points.</p>
+<h3 id="symptoms">Symptoms</h3>
+<ul>
+<li>18 reporters describe being returned to the sign-in page immediately after a successful identity-provider sign-in. <span class="badge badge-reported"><span class="badge-key" aria-hidden="true">R</span>Reported</span> [E14] [E22]</li>
+<li>7 reporters describe the loop starting the first time they signed in after the scheduled certificate rotation. <span class="badge badge-reported"><span class="badge-key" aria-hidden="true">R</span>Reported</span> [E31]</li>
+<li>4 reporters describe the loop clearing on its own after several hours. <span class="badge badge-reported"><span class="badge-key" aria-hidden="true">R</span>Reported</span> [E40]</li>
+</ul>
+<h3 id="error-messages-and-codes">Error messages and codes</h3>
+<div class="table-wrap" role="region" aria-label="Error messages and codes, table 5" tabindex="0"><table>
+<thead>
+<tr>
+<th>Text as reported</th>
+<th class="num">Reporters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ERR_SAML_SIG_INVALID</code></td>
+<td class="num">9</td>
+</tr>
+<tr>
+<td class="code-wrap"><code>Session could not be established (code 4012)</code></td>
+<td class="num">6</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="affected-environments">Affected environments</h3>
+<div class="table-wrap" role="region" aria-label="Affected environments, table 6" tabindex="0"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th class="num">Reporters</th>
+<th class="num">SSO (SAML)</th>
+<th class="num">Smart card</th>
+<th class="num">Password</th>
+<th class="num">Unknown method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial</td>
+<td class="num">3</td>
+<td class="num">3</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td class="num">0</td>
+</tr>
+<tr>
+<td>Gov 1</td>
+<td class="num">11</td>
+<td class="num">8</td>
+<td class="num">2</td>
+<td class="num">0</td>
+<td class="num">1</td>
+</tr>
+<tr>
+<td>Gov 2</td>
+<td class="num">6</td>
+<td class="num">4</td>
+<td class="num">2</td>
+<td class="num">0</td>
+<td class="num">0</td>
+</tr>
+<tr>
+<td>Gov 3</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td class="num">0</td>
+</tr>
+<tr>
+<td>Unknown tier</td>
+<td class="num">3</td>
+<td class="num">1</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td class="num">2</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>23</strong></td>
+<td class="num"><strong>16</strong></td>
+<td class="num"><strong>4</strong></td>
+<td class="num"><strong>0</strong></td>
+<td class="num"><strong>3</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Versions named: 8.14.0 (13 reporters), 8.14.1 (6), not stated (4). Not reported on: the Gov 3 tier; password sign-in. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<p>The concentration on SSO sign-in after the rotation date is consistent with the identity-provider metadata not being refreshed on the tenant side; this suggests investigating how cached signing certificates are replaced during rotation. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span> [E31]</p>
+<h3 id="timeline-first-person-reporters-per-week-12-weeks">Timeline (first-person reporters per week, 12 weeks)</h3>
+<div class="table-wrap" role="region" aria-label="Timeline (first-person reporters per week, 12 weeks), table 7" tabindex="0"><table>
+<thead>
+<tr>
+<th>Week starting</th>
+<th class="num">Reporters</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="date">13 Jul</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">20 Jul</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">27 Jul</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">3 Aug</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">10 Aug</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">17 Aug</td>
+<td class="num">0</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">24 Aug</td>
+<td class="num">2</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">31 Aug</td>
+<td class="num">2</td>
+<td>Release 8.14.0 (1 Sep)</td>
+</tr>
+<tr>
+<td class="date">7 Sep</td>
+<td class="num">3</td>
+<td class="text">Scheduled SSO certificate rotation, Gov tiers (status page, 9 Sep)</td>
+</tr>
+<tr>
+<td class="date">14 Sep</td>
+<td class="num">2</td>
+<td></td>
+</tr>
+<tr>
+<td class="date">21 Sep</td>
+<td class="num">5</td>
+<td>Release 8.14.1 (22 Sep)</td>
+</tr>
+<tr>
+<td class="date">28 Sep</td>
+<td class="num">9</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="workarounds">Workarounds</h3>
+<div class="table-wrap" role="region" aria-label="Workarounds, table 8" tabindex="0"><table>
+<thead>
+<tr>
+<th>Workaround</th>
+<th>Label</th>
+<th>Worked / partial / did not</th>
+<th class="num">Threads</th>
+<th>Burden</th>
+<th>Risk badges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Ask an organization admin to re-upload the identity-provider metadata</td>
+<td>Confirmed (5)</td>
+<td class="num">5 / 1 / 1</td>
+<td class="num">3</td>
+<td>High</td>
+<td>Requires admin</td>
+</tr>
+<tr>
+<td class="text">Clear console session cookies and sign in again</td>
+<td>Confirmed, temporary (3)</td>
+<td class="num">3 / 5 / 1</td>
+<td class="num">4</td>
+<td>Low</td>
+<td>Time burden</td>
+</tr>
+<tr>
+<td class="text">Switch the tenant to password sign-in until fixed</td>
+<td>Mixed</td>
+<td class="num">2 / 0 / 1</td>
+<td class="num">2</td>
+<td>High</td>
+<td class="text">Requires admin, Disables security function</td>
+</tr>
+<tr>
+<td class="text">Open a support case for a manual metadata refresh</td>
+<td>Secondhand</td>
+<td>Relayed only</td>
+<td class="num">2</td>
+<td>High</td>
+<td>Vendor ticket</td>
+</tr>
+</tbody>
+</table></div>
+<p>The report does not endorse workarounds. Labels count what users said about their own attempts; they are not our conclusions.</p>
+<h3 id="suggested-investigations">Suggested investigations</h3>
+<ul>
+<li>Compare tenants that re-uploaded metadata with those that did not, for the 7 reporters who named the rotation date. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></li>
+<li>Check whether 8.14.1 changed session handling for the Gov tiers, given the rise in the week it shipped. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></li>
+</ul>
+<hr>
+<h2 id="verifier-tally">Verifier tally</h2>
+<div class="table-wrap" role="region" aria-label="Verifier tally, table 9" tabindex="0"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Items checked</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Citations resolve to stored posts in the window</td>
+<td class="num">162</td>
+<td>1 claim removed</td>
+</tr>
+<tr>
+<td class="text">Quotes match the cited post exactly</td>
+<td class="num">38</td>
+<td class="text">2 quotes removed, 1 claim removed with them</td>
+</tr>
+<tr>
+<td class="text">Numbers recompute from stored data</td>
+<td class="num">214</td>
+<td>2 rewritten</td>
+</tr>
+<tr>
+<td class="text">Error and version strings appear word for word</td>
+<td class="num">19</td>
+<td>1 claim removed</td>
+</tr>
+<tr>
+<td class="text">Reported claims supported by their citations</td>
+<td class="num">97</td>
+<td class="text">1 downgraded to Inferred, 1 removed</td>
+</tr>
+<tr>
+<td class="text">Every factual sentence cited</td>
+<td class="num">241</td>
+<td>1 sentence removed</td>
+</tr>
+<tr>
+<td class="text">No usernames, personal data or full posts</td>
+<td>Whole report</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td class="text">Hedged wording for interpretations</td>
+<td class="num">22</td>
+<td>1 rewritten</td>
+</tr>
+<tr>
+<td class="text">Human review on safety-class topics</td>
+<td>0 topics</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table></div>
+<p>Totals: 5 claims removed, 3 rewritten, 1 downgraded. The report was released after all checks passed.</p>
+<hr>
+<h2 id="evidence-appendix-excerpt">Evidence appendix (excerpt)</h2>
+<div class="table-wrap" role="region" aria-label="Evidence appendix (excerpt), table 10" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type of source</th>
+<th>Author (pseudonym)</th>
+<th>Date</th>
+<th>Claim type</th>
+<th>Verifier status</th>
+<th>Link</th>
+<th>Quote</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="id">E14</td>
+<td>Vendor forum</td>
+<td>reporter-7Q2</td>
+<td class="date">29 Sep 2026</td>
+<td>Reported</td>
+<td>Verified</td>
+<td class="text">https://example.com/forum/t/1042</td>
+<td class="text">Quote omitted in public sample</td>
+</tr>
+<tr>
+<td class="id">E22</td>
+<td>Issue tracker</td>
+<td>reporter-K4M</td>
+<td class="date">1 Oct 2026</td>
+<td>Reported</td>
+<td>Verified</td>
+<td class="text">https://example.com/issues/318</td>
+<td class="text">Quote omitted in public sample</td>
+</tr>
+<tr>
+<td class="id">E31</td>
+<td>Q&amp;A site</td>
+<td>reporter-3VD</td>
+<td class="date">10 Sep 2026</td>
+<td>Reported</td>
+<td>Verified</td>
+<td class="text">https://example.com/questions/77</td>
+<td class="text">Quote omitted in public sample</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<div class="callout callout-sample" role="note">
+<p><strong>Illustrative sample. Fictional product, invented data.</strong></p>
+</div>
+<p class="actions"><a class="btn btn-primary" href="mailto:hello@threadwitness.com?subject=Walkthrough&amp;body=Product%3A%20%0ARelease%20or%20environment%3A%20%0AYour%20role%3A%20">Book a 30-minute walkthrough</a><a class="btn btn-quiet" href="/how-it-works/">How the report is built</a></p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-inner">
+<nav aria-label="Footer">
+<ul class="footer-list"><li><a href="/corrections/">Corrections</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li></ul>
+</nav>
+<p class="footer-contact"><a href="mailto:hello@threadwitness.com">hello@threadwitness.com</a></p>
+<p class="footer-note">Public data only. Counts measure public discussion, not failure rates.</p>
+<p class="footer-copy">© 2026 Thread Witness</p>
+</div>
+</footer>
+</body>
+</html>

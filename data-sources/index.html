@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121619" media="(prefers-color-scheme: dark)">
+<title>How we source data · Thread Witness</title>
+<meta name="description" content="Where Thread Witness data comes from, how it is accessed, how authors are protected, and what you can ask us to do.">
+<link rel="canonical" href="https://threadwitness.com/data-sources/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thread Witness">
+<meta property="og:title" content="How we source data · Thread Witness">
+<meta property="og:description" content="Where Thread Witness data comes from, how it is accessed, how authors are protected, and what you can ask us to do.">
+<meta property="og:url" content="https://threadwitness.com/data-sources/">
+<meta property="og:image" content="https://threadwitness.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thread Witness wordmark: a thread passing through an eye, with the line: cited weekly reports on what users report in public.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How we source data · Thread Witness">
+<meta name="twitter:description" content="Where Thread Witness data comes from, how it is accessed, how authors are protected, and what you can ask us to do.">
+<meta name="twitter:image" content="https://threadwitness.com/assets/og.png">
+</head>
+<body class="page-data-sources">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="wordmark" href="/" aria-label="Thread Witness, home"><svg class="mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><path class="tw-eye" d="M3 16C7 8 25 8 29 16C25 24 7 24 3 16Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><circle class="tw-pupil" cx="16" cy="16" r="5" fill="currentColor"/><path class="tw-thread-gap" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tw-thread" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="2.6" stroke-linecap="round"/></svg><span class="wordmark-text">Thread<span class="wordmark-gap"> </span>Witness</span></a>
+<nav class="site-nav" aria-label="Main">
+<details class="menu">
+<summary><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
+<ul class="menu-list"><li><a href="/how-it-works/">How it works</a></li><li><a href="/sample-report/">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/" aria-current="page">Data sources</a></li></ul>
+</details>
+<ul class="nav-list"><li><a href="/how-it-works/">How it works</a></li><li><a href="/sample-report/">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/" aria-current="page">Data sources</a></li></ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap content">
+<h1 id="how-we-source-data">How we source data</h1>
+<p class="meta">Last updated: 11 October 2026</p>
+<p class="lede">Thread Witness reads only public information, and only where we have a recorded basis to read it.</p>
+<h2 id="typical-sources">Typical sources</h2>
+<ul>
+<li>Public issue trackers, such as GitHub issues and public Jira projects</li>
+<li>Stack Exchange sites (counted and linked, not quoted)</li>
+<li>Hacker News</li>
+<li>Vendor developer forums and public help-center communities</li>
+<li>Release notes, changelogs and status pages</li>
+<li>For consumer brands and home builders (in development): CPSC SaferProducts.gov incident reports and recalls, and NHTSA vehicle complaints and recalls, through their official open-data interfaces</li>
+</ul>
+<p>If you run a community whose terms restrict automated reading, written permission from you adds it as a source for your reports.</p>
+<h2 id="official-apis-and-feeds-first">Official APIs and feeds first</h2>
+<p>We prefer official APIs, published RSS and Atom feeds, public status pages and government open data. Where a site offers none of these, we make ordinary rate-limited page requests, and only if its terms permit or do not prohibit automated reading and its robots.txt allows our agent.</p>
+<h2 id="a-recorded-basis-for-every-source">A recorded basis for every source</h2>
+<p>Each source carries a record of the basis on which we read it: reviewed API terms, government open data, site terms that permit or do not prohibit automated reading, a published feed, written permission from the operator, or a license. Reviews are renewed at least every 180 days.</p>
+<p>Where a site&rsquo;s terms restrict automated or commercial use but the site publishes an RSS or Atom feed, we read only that feed, not the site&rsquo;s pages. Sources we do not read are listed as known gaps in every report.</p>
+<h2 id="how-we-read">How we read</h2>
+<ul>
+<li>robots.txt is checked before every crawl.</li>
+<li>Our crawler identifies itself with the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources; hello@threadwitness.com)</code>. To block it, disallow the robots.txt token <code>ThreadWitness</code>.</li>
+<li>No logins, no CAPTCHA solving, no proxy rotation, no circumventing paywalls or bot protection. If a site blocks us, we stop.</li>
+<li>Requests are rate-limited per site.</li>
+</ul>
+<h2 id="what-we-do-not-read">What we do not read</h2>
+<ul>
+<li>Review sites and retailer reviews.</li>
+<li>Reddit, except under a signed license. We do not hold one today.</li>
+<li>Anything behind a login, private groups, direct messages or email.</li>
+</ul>
+<h2 id="authors-are-pseudonymized">Authors are pseudonymized</h2>
+<p>Author names are replaced with keyed pseudonyms before posts enter our database or are sent to a language model. Email addresses, phone numbers and ID-like strings are removed at the same step. Usernames that appear inside post text, such as a reply that mentions another user, are removed from every report by the verifier before release. We build no profiles of individuals: authors exist only as pseudonyms attached to counts.</p>
+<p>Raw copies of fetched pages, which can include usernames, are held in a restricted cache so posts can be reprocessed. They are not used in reports. Automatic deletion of those copies after a set period is in development.</p>
+<h2 id="quotes">Quotes</h2>
+<p>Quotes are verbatim, at most 200 characters, linked to the source post, and never a full post. Each person is quoted at most once per topic. Some sources, such as Stack Exchange, are counted and linked but not quoted.</p>
+<h2 id="edits-and-deletions">Edits and deletions</h2>
+<p>Each crawl re-reads the most recent 72 hours of a source to catch late replies. In development: updating stored posts that were edited at the source, and a monthly re-check of posts cited in stored reports that drops quotes from posts deleted or edited since. Copies of reports already delivered into a customer&rsquo;s own systems cannot be recalled by us.</p>
+<h2 id="ai-providers">AI providers</h2>
+<p>To classify posts and write reports we will use AI model and embedding providers. Before any collected data is sent to them, this page will name each provider, what it receives and its retention terms. They will receive post text with author names replaced by pseudonyms. We do not train models on collected content.</p>
+<h2 id="if-you-posted-in-a-source-we-read">If you posted in a source we read</h2>
+<ul>
+<li><strong>Who we are.</strong> Thread Witness. Contact: <a href="mailto:hello@threadwitness.com?subject=My%20posts">hello@threadwitness.com</a>.</li>
+<li><strong>Purpose.</strong> We count and cite public reports about products so that the teams responsible for them can find and fix problems.</li>
+<li><strong>Lawful basis.</strong> Our legitimate interest in analysing public product discussion, limited by the safeguards on this page: public sources only, pseudonyms instead of usernames, short linked quotes and no profiles.</li>
+<li><strong>What we hold.</strong> The public post text, its link and date, and a pseudonym in place of your username. Raw page copies are described above.</li>
+<li><strong>Retention.</strong> Our retention period for stored post text is 24 months. Automatic deletion at the end of that period is in development.</li>
+<li><strong>Your rights.</strong> You can ask what we hold about your posts, object to our use of them, and ask us to correct or erase them. Write to us as described on <a href="/corrections/">Corrections and takedowns</a>. We may ask you to show that you control the account before we act.</li>
+<li><strong>Complaints.</strong> If you are in the UK or the European Economic Area, you can complain to your data protection supervisory authority.</li>
+</ul>
+<h2 id="corrections-and-takedowns">Corrections and takedowns</h2>
+<p>Anyone can ask us to correct or remove something. We acknowledge every request within 48 hours. <a href="/corrections/">How to request a correction</a></p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-inner">
+<nav aria-label="Footer">
+<ul class="footer-list"><li><a href="/corrections/">Corrections</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li></ul>
+</nav>
+<p class="footer-contact"><a href="mailto:hello@threadwitness.com">hello@threadwitness.com</a></p>
+<p class="footer-note">Public data only. Counts measure public discussion, not failure rates.</p>
+<p class="footer-copy">© 2026 Thread Witness</p>
+</div>
+</footer>
+</body>
+</html>

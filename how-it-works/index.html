@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121619" media="(prefers-color-scheme: dark)">
+<title>How it works · Thread Witness</title>
+<meta name="description" content="The Thread Witness pipeline, topic IDs, workaround counts, release correlation, fix verification and the verifier rules.">
+<link rel="canonical" href="https://threadwitness.com/how-it-works/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thread Witness">
+<meta property="og:title" content="How it works · Thread Witness">
+<meta property="og:description" content="The Thread Witness pipeline, topic IDs, workaround counts, release correlation, fix verification and the verifier rules.">
+<meta property="og:url" content="https://threadwitness.com/how-it-works/">
+<meta property="og:image" content="https://threadwitness.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thread Witness wordmark: a thread passing through an eye, with the line: cited weekly reports on what users report in public.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How it works · Thread Witness">
+<meta name="twitter:description" content="The Thread Witness pipeline, topic IDs, workaround counts, release correlation, fix verification and the verifier rules.">
+<meta name="twitter:image" content="https://threadwitness.com/assets/og.png">
+</head>
+<body class="page-how-it-works">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="wordmark" href="/" aria-label="Thread Witness, home"><svg class="mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><path class="tw-eye" d="M3 16C7 8 25 8 29 16C25 24 7 24 3 16Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><circle class="tw-pupil" cx="16" cy="16" r="5" fill="currentColor"/><path class="tw-thread-gap" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tw-thread" d="M1.5 25.5C9 23 12 19 16 16S23 9 30.5 6.5" fill="none" stroke-width="2.6" stroke-linecap="round"/></svg><span class="wordmark-text">Thread<span class="wordmark-gap"> </span>Witness</span></a>
+<nav class="site-nav" aria-label="Main">
+<details class="menu">
+<summary><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
+<ul class="menu-list"><li><a href="/how-it-works/" aria-current="page">How it works</a></li><li><a href="/sample-report/">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/">Data sources</a></li></ul>
+</details>
+<ul class="nav-list"><li><a href="/how-it-works/" aria-current="page">How it works</a></li><li><a href="/sample-report/">Sample report</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/federal/">Federal</a></li><li><a href="/consumer-and-homes/">Consumer and homes</a></li><li><a href="/data-sources/">Data sources</a></li></ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap content">
+<h1 id="how-it-works">How it works</h1>
+<p class="lede">Thread Witness reads public discussion about a product, merges reports of the same problem or request into one topic, and counts the unique people behind each one. A language model writes the weekly report only from that stored evidence, and an automated verifier checks every citation, quote and number before release. Every factual sentence in the report links to a public post.</p>
+<p>This page explains each step and the rules the report follows.</p>
+<h2 id="the-pipeline">The pipeline</h2>
+<ol>
+<li><strong>Discover.</strong> Each source is read on a schedule through its official API, a published feed, or ordinary rate-limited page requests where its terms permit or do not prohibit automated reading. Each crawl re-reads the last 72 hours to catch late replies. In development: a daily search for new places where your product is discussed. A person reviews each new source&rsquo;s terms before it is ever read.</li>
+<li><strong>Pseudonymize.</strong> Author names are replaced with keyed pseudonyms, and email addresses, phone numbers and ID-like strings are removed, before posts enter our database or are sent to a language model. Usernames mentioned inside post text are removed from reports by the verifier.</li>
+<li><strong>Match to product.</strong> Each post is tagged with the products it is about. One thread can be about several products.</li>
+<li><strong>Classify.</strong> Each post is typed: a first-person issue report, a feature request, a workaround, a confirmation or refutation of a workaround, an official response relayed secondhand, praise, or other.</li>
+<li><strong>Extract.</strong> Structured fields are pulled from each relevant post: symptom, error codes and on-screen text, triggering conditions, version, environment, the workaround tried and whether it worked, the capability requested and why. Every extracted value must point to the exact words in the post. A value without them is rejected.</li>
+<li><strong>Merge.</strong> Reports of the same problem become one issue; requests for the same capability become one request.</li>
+<li><strong>Score.</strong> Counts and scores are computed from the stored data.</li>
+<li><strong>Write and verify.</strong> A language model writes each section only from the evidence for that topic, under an instruction to omit rather than guess. The verifier then checks the draft.</li>
+<li><strong>Deliver.</strong> The report, a PDF, an evidence file and a one-page executive summary are produced. Alerts and ticket sync are built and being prepared for production.</li>
+</ol>
+<p>These steps are built. Reading public sources runs today; the later steps are in testing during early access.</p>
+<h2 id="topic-ids">Topic IDs</h2>
+<p>Every issue and feature request gets an ID such as <code>NWC-ISS-4H8T2C</code> or <code>NWC-FR-6D1K8V</code>. The ID never changes and is never reused, so you can put it in a ticket, a knowledge-base article or a review deck and find the same topic next quarter. When two topics turn out to be one, or one turns out to be two, the merge or split is logged and listed in the report.</p>
+<h2 id="issues-and-requests-are-separate">Issues and requests are separate</h2>
+<p>Problems and wishes are extracted and scored separately. Priority and Demand are both scored 0 to 100.</p>
+<ul>
+<li>Issues get a <strong>Priority</strong> score from severity, reach, velocity (how fast new reporters are arriving compared with the two weeks before), workaround strength, corroboration (reported in more than one type of source) and recency.</li>
+<li>Requests get a <strong>Demand</strong> score from unique requesters, engagement, strength of language and overlap with open issues. When a request would remove the need for a workaround, the two are linked.</li>
+</ul>
+<p>A topic enters a main table only when at least 3 unique first-person reporters described it in the trailing 8 weeks, unless it is in the safety or security class. Below that it appears in an &ldquo;Emerging (low evidence)&rdquo; table.</p>
+<h2 id="severity-and-human-review">Severity and human review</h2>
+<p>Each first-person report is classed by what the reporter experienced:</p>
+<div class="table-wrap" role="region" aria-label="Severity and human review, table 1" tabindex="0"><table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1 Safety or security</td>
+<td class="text">Could plausibly cause injury, loss of control, a security breach, exposure of protected data, or disable a safety or security function.</td>
+</tr>
+<tr>
+<td class="text">S2 Data loss, lockout or unavailable</td>
+<td class="text">The product is unusable, data is irrecoverable, or recovery needs vendor support or a reset that loses data.</td>
+</tr>
+<tr>
+<td>S3 Core function loss</td>
+<td class="text">A primary function fails, but the product is otherwise usable or recovers with a user action.</td>
+</tr>
+<tr>
+<td>S4 Degraded</td>
+<td class="text">Works with reduced quality, intermittent failures or slower performance.</td>
+</tr>
+<tr>
+<td>S5 Cosmetic</td>
+<td class="text">Presentation, wording or minor annoyance.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A topic&rsquo;s severity is the highest class supported by at least two independent reporters. Anything in the safety or security class is shown as &ldquo;pending human review&rdquo; until a person has reviewed it and recorded a decision.</p>
+<h2 id="workaround-counts">Workaround counts</h2>
+<p>Users often post a workaround and others reply that it did or did not work. Thread Witness counts those replies:</p>
+<ul>
+<li>Only first-person trials count. &ldquo;Support told me to try X&rdquo; is labelled Secondhand.</li>
+<li>One person counts at most once for and once against a given workaround.</li>
+<li>A report that a workaround worked, followed by a report that the problem came back, is counted as partial.</li>
+</ul>
+<p>Labels follow fixed rules: <strong>Confirmed (N)</strong>, <strong>Confirmed, temporary (N)</strong>, <strong>Likely (N)</strong>, <strong>Mixed</strong>, <strong>Partial</strong>, <strong>Unconfirmed</strong>, <strong>Refuted</strong>, <strong>Secondhand</strong>. These label names count user replies; they are not our conclusions. Each workaround also carries its cost and risk: requires admin, requires a vendor ticket, disables a security function, risks data loss, needs third-party software, time burden. The report does not endorse workarounds; it reports what users said.</p>
+<h2 id="what-users-praise-in-development">What users praise (in development)</h2>
+<p>Posts that say what people like are already recognized when posts are classified. In development: grouping them into strength topics and showing them beside issues and requests, so a team sees what to protect as well as what to fix.</p>
+<h2 id="release-correlation">Release correlation</h2>
+<p>Release notes, changelogs and status-page feeds are read as events. Each issue timeline is annotated with releases and incidents, so a rise in reports can be read against what shipped or what went down that week. The report describes timing; it does not claim cause.</p>
+<h2 id="fix-verification-business-and-enterprise-plans">Fix verification (Business and Enterprise plans)</h2>
+<p>When you tell us an issue was fixed in a release (in the dashboard, or by email during early access), Thread Witness compares public reports before and after the fix ships, from week 4 onward. Verdicts describe public reports, not product behavior.</p>
+<div class="table-wrap" role="region" aria-label="Fix verification (Business and Enterprise plans), table 2" tabindex="0"><table>
+<thead>
+<tr>
+<th>Verdict</th>
+<th>In plain language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fix verified</td>
+<td class="text">Reports fell to a quarter of the pre-fix rate or less for two weeks, most reporters are on the fixed version, and almost none of them still describe the problem.</td>
+</tr>
+<tr>
+<td>Partially effective</td>
+<td class="text">Reports fell but not far enough, or a few people on the fixed version still describe it.</td>
+</tr>
+<tr>
+<td>Inconclusive</td>
+<td class="text">Too early, too few people on the fixed version yet, or too little volume before the fix to compare.</td>
+</tr>
+<tr>
+<td>Regression suspected</td>
+<td class="text">Several people on the fixed version describe the problem, or reports stayed high or rose.</td>
+</tr>
+<tr>
+<td>New regression</td>
+<td class="text">Reports of a different problem that start at the fixed version.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fix verification needs a baseline and several weeks of observation, so it runs on Business and Enterprise subscriptions.</p>
+<h2 id="claim-types">Claim types</h2>
+<p>Every factual sentence in a report carries one of four badges:</p>
+<div class="table-wrap" role="region" aria-label="Claim types, table 3" tabindex="0"><table>
+<thead>
+<tr>
+<th>Badge</th>
+<th>What it means</th>
+<th>How it is checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="badge badge-reported"><span class="badge-key" aria-hidden="true">R</span>Reported</span></td>
+<td class="text">A statement the cited posts make directly.</td>
+<td class="text">Checked for support against each cited post.</td>
+</tr>
+<tr>
+<td><span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></td>
+<td class="text">A number computed from the stored data.</td>
+<td class="text">Recomputed before release.</td>
+</tr>
+<tr>
+<td><span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></td>
+<td class="text">Our interpretation, hedged and pointing to its evidence.</td>
+<td class="text">Checked for hedged wording.</td>
+</tr>
+<tr>
+<td><span class="badge badge-secondhand"><span class="badge-key" aria-hidden="true">S</span>Secondhand</span></td>
+<td class="text">A user relaying what someone else said.</td>
+<td class="text">Shown as relayed; never counted toward severity.</td>
+</tr>
+</tbody>
+</table></div>
+<p>You will see phrasing such as &ldquo;N reporters describe&rdquo;, &ldquo;community reports indicate&rdquo;, &ldquo;consistent with&rdquo; and &ldquo;suggests investigating&rdquo;. No individual, reseller, dealer or third-party vendor is named as being at fault.</p>
+<h2 id="the-verifier-in-plain-language">The verifier, in plain language</h2>
+<p>Before a report is released, nine checks run on every sentence:</p>
+<ol>
+<li>Every citation points to a stored public post in the report&rsquo;s window.</li>
+<li>Every quote matches the cited post exactly.</li>
+<li>Every number recomputes from the stored data.</li>
+<li>Every error code, alert text or version string appears word for word in a cited post.</li>
+<li>Every Reported statement is supported by the posts it cites.</li>
+<li>Every sentence that states a fact has a citation.</li>
+<li>No usernames, personal data or full posts appear anywhere.</li>
+<li>Our interpretations use hedged wording, and conclusion words such as &ldquo;proves&rdquo;, &ldquo;confirms&rdquo; or &ldquo;caused by&rdquo; appear only inside quotes. Fixed label names such as Confirmed (N) count user replies and are the one exception.</li>
+<li>Every safety- or security-class topic has a human review record.</li>
+</ol>
+<p>A sentence that fails is removed, rewritten, or downgraded from Reported to Inferred. A report that fails check 7 is not released. A safety-class topic without a review record is held as pending human review and stays out of the report&rsquo;s reviewed safety findings. The report header prints the tally.</p>
+<h2 id="what-the-counts-mean">What the counts mean</h2>
+<p>Counts measure public discussion in the sources we read. They are not failure rates, incidence rates or satisfaction scores. People who post in public are not a random sample of your users: some groups post more than others, some problems are more likely to be discussed, and the sources we can read differ by product. Every report lists its sources, the date range, what was scanned, and the known gaps. Thread Witness publishes no scorecards and no rankings of vendors.</p>
+<p class="actions"><a class="btn btn-quiet" href="/sample-report/">See a sample report</a><a class="btn btn-quiet" href="/data-sources/">How we source data</a></p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-inner">
+<nav aria-label="Footer">
+<ul class="footer-list"><li><a href="/corrections/">Corrections</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li></ul>
+</nav>
+<p class="footer-contact"><a href="mailto:hello@threadwitness.com">hello@threadwitness.com</a></p>
+<p class="footer-note">Public data only. Counts measure public discussion, not failure rates.</p>
+<p class="footer-copy">© 2026 Thread Witness</p>
+</div>
+</footer>
+</body>
+</html>
