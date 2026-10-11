@@ -66,10 +66,27 @@
 <h2 id="how-we-read">How we read</h2>
 <ul>
 <li>robots.txt is checked before every crawl.</li>
-<li>Our crawler identifies itself with the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources; hello@threadwitness.com)</code>. To block it, disallow the robots.txt token <code>ThreadWitness</code>.</li>
+<li>Our crawler identifies itself with the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources/; hello@threadwitness.com)</code>. To block it, disallow the robots.txt token <code>ThreadWitness</code>. See <a href="#for-site-operators">For site operators</a>.</li>
 <li>No logins, no CAPTCHA solving, no proxy rotation, no circumventing paywalls or bot protection. If a site blocks us, we stop.</li>
 <li>Requests are rate-limited per site.</li>
 </ul>
+<h2 id="for-site-operators">For site operators</h2>
+<p>If you run a site our crawler reads, here is how it behaves and how to control it.</p>
+<ul>
+<li><strong>Name.</strong> The robots.txt token is <code>ThreadWitness</code>. Every request carries the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources/; hello@threadwitness.com)</code>. We never change or disguise it.</li>
+<li><strong>Earlier name.</strong> Before October 2026 the crawler sent <code>forum-intel/0.1</code>. Rules you wrote for <code>forum-intel</code> still bind it.</li>
+<li><strong>robots.txt.</strong> We read it before crawling and re-read it at least every six hours. If it cannot be reached because of a server error, we do not crawl until it can.</li>
+<li><strong>Pace.</strong> By default we send no more than 30 requests a minute to any one host. We slow down further when your robots.txt sets a <code>Crawl-delay</code>, and we honour <code>Retry-After</code> on 429 and 503 responses.</li>
+<li><strong>Blocks.</strong> A 401, 403 or 451 response, a challenge page or a pay-per-crawl gateway stops crawling of that source until a person reviews it. We do not retry around blocks, rotate addresses or use proxies.</li>
+<li><strong>Access.</strong> We do not log in, solve CAPTCHAs, or read private or members-only areas.</li>
+</ul>
+<p>To block the crawler from your whole site:</p>
+<p><code>User-agent: ThreadWitness
+Disallow: /</code></p>
+<p>To block one part of it:</p>
+<p><code>User-agent: ThreadWitness
+Disallow: /members/</code></p>
+<p>To ask us to stop reading your site, to grant permission for a community whose terms restrict automated reading, or to report a problem with our crawler, write to <a href="mailto:hello@threadwitness.com?subject=Site%20operator">hello@threadwitness.com</a>. We stop on request and confirm in writing.</p>
 <h2 id="what-we-do-not-read">What we do not read</h2>
 <ul>
 <li>Review sites and retailer reviews.</li>
