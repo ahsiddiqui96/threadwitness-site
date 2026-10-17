@@ -46,18 +46,17 @@
 <main id="main" tabindex="-1">
 <div class="wrap content">
 <h1 id="how-we-source-data">How we source data</h1>
-<p class="meta">Last updated: 11 October 2026</p>
+<p class="meta">Last updated: 17 October 2026</p>
 <p class="lede">Thread Witness reads only public information, and only where we have a recorded basis to read it.</p>
 <h2 id="typical-sources">Typical sources</h2>
 <ul>
 <li>Public issue trackers, such as GitHub issues and public Jira projects</li>
-<li>Stack Exchange sites (counted and linked, not quoted)</li>
-<li>Hacker News</li>
-<li>Vendor developer forums and public help-center communities</li>
+<li>Vendor developer forums and public help-center communities whose terms permit automated reading</li>
 <li>Release notes, changelogs and status pages</li>
 <li>For consumer brands and home builders (in development): CPSC SaferProducts.gov incident reports and recalls, and NHTSA vehicle complaints and recalls, through their official open-data interfaces</li>
 </ul>
 <p>If you run a community whose terms restrict automated reading, written permission from you adds it as a source for your reports.</p>
+<p>We review each source&rsquo;s terms again at least every 180 days, and sooner when a question comes up. When a review finds that a source&rsquo;s terms restrict our use, we stop reading it until its operator gives written permission. In October 2026 that review paused Hacker News, Stack Exchange, Microsoft Tech Community feeds, YouTube comments and help centers served through Zendesk&rsquo;s API.</p>
 <h2 id="official-apis-and-feeds-first">Official APIs and feeds first</h2>
 <p>We prefer official APIs, published RSS and Atom feeds, public status pages and government open data. Where a site offers none of these, we make ordinary rate-limited page requests, and only if its terms permit or do not prohibit automated reading and its robots.txt allows our agent.</p>
 <h2 id="a-recorded-basis-for-every-source">A recorded basis for every source</h2>
@@ -97,7 +96,7 @@ Disallow: /members/</code></p>
 <p>Author names are replaced with keyed pseudonyms before posts enter our database or are sent to a language model. Email addresses, phone numbers and ID-like strings are removed at the same step. Usernames that appear inside post text, such as a reply that mentions another user, are removed from every report by the verifier before release. We build no profiles of individuals: authors exist only as pseudonyms attached to counts.</p>
 <p>Raw copies of fetched pages, which can include usernames, are held in a restricted cache so posts can be reprocessed. They are not used in reports. Automatic deletion of those copies after a set period is in development.</p>
 <h2 id="quotes">Quotes</h2>
-<p>Quotes are verbatim, at most 200 characters, linked to the source post, and never a full post. Each person is quoted at most once per topic. Some sources, such as Stack Exchange, are counted and linked but not quoted.</p>
+<p>Quotes are verbatim, at most 200 characters, linked to the source post, and never a full post. Each person is quoted at most once per topic.</p>
 <h2 id="edits-and-deletions">Edits and deletions</h2>
 <p>Each crawl re-reads the most recent 72 hours of a source to catch late replies. In development: updating stored posts that were edited at the source, and a monthly re-check of posts cited in stored reports that drops quotes from posts deleted or edited since. Copies of reports already delivered into a customer&rsquo;s own systems cannot be recalled by us.</p>
 <h2 id="ai-providers">AI providers</h2>
