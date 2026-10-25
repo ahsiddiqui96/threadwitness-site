@@ -107,14 +107,24 @@
 </table></div>
 <p class="actions"><a class="btn btn-quiet" href="/sample-report/">See the full sample report</a></p>
 <h2 id="for-agency-program-offices">For agency program offices</h2>
-<p>Teams that run public-facing systems see what users say in public about those systems: the steps users say they get stuck on, the error messages they quote, the help-center advice they relay (shown as Secondhand), and whether reports fall after a change. The same evidence rules apply: pseudonymized authors, short linked quotes, and counts of public discussion rather than failure rates. Findings are not published as rankings or scorecards.</p>
-<p><strong>Example (fictional system, invented data).</strong> For a fictional benefits portal, 12 reporters describe the identity-verification step rejecting a photo of a valid ID, and 5 of them relay help-desk advice to retry from a desktop browser, shown as Secondhand. Reports fell from 6 a week to 2 in the three weeks after a change to the upload page.</p>
+<p>OMB Circular A-11 Section 280 asks High-Impact Service Providers to collect customer feedback and act on it in a customer-experience action plan. What members of the public write in public forums is feedback your own surveys do not capture. For program offices, the report answers one question: <strong>where does the public get stuck on your system?</strong></p>
+<ul>
+<li><strong>Journey steps.</strong> Each issue is placed on the step people describe (create an account, verify identity, sign in, upload a document, submit, check status), with the error messages they quote and the device or carrier they name.</li>
+<li><strong>Cited counts with their denominator.</strong> &ldquo;12 of the 58 unique first-person reporters in the trailing 8 weeks&rdquo;, never a percentage of your users, never a failure rate.</li>
+<li><strong>A budget and CX evidence page per issue.</strong> The problem as people describe it, the count and its window, a 12-week timeline with your releases marked, what people asked for instead, and whether reports fell after a change shipped: one page to attach to an action plan or a budget justification.</li>
+<li><strong>Help-desk advice people relay</strong> is shown as Secondhand and never counted toward severity.</li>
+<li><strong>No ranking against other agencies.</strong> Every comparison is with your own system&rsquo;s history. Findings are not published as rankings or scorecards, and nothing names an individual.</li>
+</ul>
+<p><strong>Example (fictional system, invented data).</strong> For a fictional benefits portal, 12 of the 58 unique first-person reporters in the trailing 8 weeks describe the identity-verification step rejecting a photo of a valid ID, and 5 of them relay help-desk advice to retry from a desktop browser, shown as Secondhand. Reports fell from 6 a week to 2 in the three weeks after a change to the upload page.</p>
 <h2 id="the-community-issue-audit">The Community Issue Audit</h2>
 <p>The audit is $14,500 fixed. The federal micro-purchase threshold is $15,000; your contracting office makes its own determination of the purchasing path. The audit is a complete, stand-alone deliverable. Any later subscription is a separate purchase and is not required.</p>
 <ul>
 <li>One product and one environment family, for example one government-cloud tier</li>
 <li>90 days of public reports</li>
-<li>A verified report with an evidence file, human review of any safety- or security-class topic, a 60-minute readout and written answers to three questions</li>
+<li>A board summary on the cover: what the window holds, how many of the people reporting any issue the top ten account for, how many have no confirmed workaround, and how long they have been public</li>
+<li>The top ten issues, each with the date of its first public report and the days it has gone unresolved, a 13-week timeline with releases marked, exact error strings, the configurations people state, the workaround table and a &ldquo;what to ask engineering&rdquo; question</li>
+<li>A parity list: issues reported only on government-cloud tiers, and requests where people cite an alternative (counted, never named or ranked)</li>
+<li>A verified report with an evidence file and a CSV of the ten for a tracker import, human review of any safety- or security-class topic, a 60-minute readout and written answers to three questions</li>
 <li>Payment by invoice or purchase order; ask whether card payment is available at quote</li>
 </ul>
 <p>We are scheduling the first early-access audits now. Typical delivery is 15 business days from kickoff, and the delivery date is confirmed in writing at kickoff.</p>
@@ -127,9 +137,9 @@
 <p>Thread Witness does not hold a FedRAMP authorization and makes no claim to one. Whether FedRAMP or other requirements apply to your use is a determination for your agency. We can describe our data flows in writing for your security office.</p>
 <h2 id="questions-we-are-asked">Questions we are asked</h2>
 <p><strong>We already see this in support tickets.</strong> Then the issues you already know are a check on our accuracy, and the ones you do not recognize are the value. Public reports sometimes precede tickets, and they include what administrators told each other worked. The walkthrough shows whether that is true for your product.</p>
-<p><strong>Is reading these sites allowed?</strong> Each source is read under a recorded basis, with its terms reviewed at least every 180 days. Sources we do not read are listed as known gaps in every report. <a href="/data-sources/">How we source data</a></p>
+<p><strong>How are these sites read?</strong> Only public pages, official APIs and published feeds, never behind a login. Our crawler identifies itself honestly, honours robots.txt, is rate-limited and stops when a site blocks it. Sources we do not read are listed as known gaps in every report. <a href="/data-sources/">How we source data</a></p>
 <p><strong>Where is Reddit?</strong> Reddit requires a license for commercial use, which we do not hold, so it is excluded and listed as a gap.</p>
-<p><strong>Our community&rsquo;s terms restrict this.</strong> Then we either do not read it, and the report lists it as a gap, or we read only the RSS or Atom feed it publishes. Written permission from you adds your community as a source for your reports.</p>
+<p><strong>We do not want our community read.</strong> Disallow the <code>ThreadWitness</code> token in your robots.txt, or write to <a href="mailto:hello@threadwitness.com?subject=Site%20operator">hello@threadwitness.com</a>. We stop reading a site promptly on request, and reports then list it as a gap.</p>
 <p><strong>Can we get it without staff logging in?</strong> Yes. Reports, PDFs and evidence files are delivered by email.</p>
 <p><strong>Many of these posters are federal employees. How is their privacy protected?</strong> Author names are replaced with pseudonyms, no profiles of individuals are built, quotes are short and linked, and an author can ask us to erase their posts. <a href="/corrections/">Corrections and takedowns</a></p>
 <p class="actions"><a class="btn btn-primary" href="mailto:hello@threadwitness.com?subject=Walkthrough&amp;body=Product%3A%20%0ARelease%20or%20environment%20%28for%20example%20a%20government-cloud%20tier%29%3A%20%0AYour%20role%3A%20">Book a 30-minute walkthrough</a><span class="actions-text">hello@threadwitness.com</span></p>

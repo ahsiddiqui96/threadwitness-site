@@ -46,28 +46,24 @@
 <main id="main" tabindex="-1">
 <div class="wrap content">
 <h1 id="how-we-source-data">How we source data</h1>
-<p class="meta">Last updated: 17 October 2026</p>
-<p class="lede">Thread Witness reads only public information, and only where we have a recorded basis to read it.</p>
+<p class="meta">Last updated: 19 October 2026</p>
+<p class="lede">Thread Witness reads only public information: public pages, official APIs and published feeds. It never logs in.</p>
 <h2 id="typical-sources">Typical sources</h2>
 <ul>
 <li>Public issue trackers, such as GitHub issues and public Jira projects</li>
-<li>Vendor developer forums and public help-center communities whose terms permit automated reading</li>
+<li>Vendor developer forums, public help-center communities and public Q&amp;A sites</li>
 <li>Release notes, changelogs and status pages</li>
 <li>For consumer brands and home builders (in development): CPSC SaferProducts.gov incident reports and recalls, and NHTSA vehicle complaints and recalls, through their official open-data interfaces</li>
 </ul>
-<p>If you run a community whose terms restrict automated reading, written permission from you adds it as a source for your reports.</p>
-<p>We review each source&rsquo;s terms again at least every 180 days, and sooner when a question comes up. When a review finds that a source&rsquo;s terms restrict our use, we stop reading it until its operator gives written permission. In October 2026 that review paused Hacker News, Stack Exchange, Microsoft Tech Community feeds, YouTube comments and help centers served through Zendesk&rsquo;s API.</p>
 <h2 id="official-apis-and-feeds-first">Official APIs and feeds first</h2>
-<p>We prefer official APIs, published RSS and Atom feeds, public status pages and government open data. Where a site offers none of these, we make ordinary rate-limited page requests, and only if its terms permit or do not prohibit automated reading and its robots.txt allows our agent.</p>
-<h2 id="a-recorded-basis-for-every-source">A recorded basis for every source</h2>
-<p>Each source carries a record of the basis on which we read it: reviewed API terms, government open data, site terms that permit or do not prohibit automated reading, a published feed, written permission from the operator, or a license. Reviews are renewed at least every 180 days.</p>
-<p>Where a site&rsquo;s terms restrict automated or commercial use but the site publishes an RSS or Atom feed, we read only that feed, not the site&rsquo;s pages. Sources we do not read are listed as known gaps in every report.</p>
+<p>We prefer official APIs, published RSS and Atom feeds, public status pages and government open data. Where a site offers none of these, we make ordinary rate-limited requests for its public pages, and only where its robots.txt allows our agent.</p>
+<p>Sources we do not read, such as a site whose robots.txt disallows us, one that needs a login or one that blocks our crawler, are listed as known gaps in every report.</p>
 <h2 id="how-we-read">How we read</h2>
 <ul>
-<li>robots.txt is checked before every crawl.</li>
-<li>Our crawler identifies itself with the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources/; hello@threadwitness.com)</code>. To block it, disallow the robots.txt token <code>ThreadWitness</code>. See <a href="#for-site-operators">For site operators</a>.</li>
-<li>No logins, no CAPTCHA solving, no proxy rotation, no circumventing paywalls or bot protection. If a site blocks us, we stop.</li>
+<li>robots.txt is checked before every crawl, for the <code>ThreadWitness</code> token.</li>
+<li>Our crawler identifies itself honestly, with the user agent <code>ThreadWitness/1.0 (+https://threadwitness.com/data-sources/; hello@threadwitness.com)</code>. To block it, disallow the robots.txt token <code>ThreadWitness</code>. See <a href="#for-site-operators">For site operators</a>.</li>
 <li>Requests are rate-limited per site.</li>
+<li>No logins, no CAPTCHA solving, no proxy or address rotation, no circumventing paywalls or bot protection. If a site blocks us, we stop.</li>
 </ul>
 <h2 id="for-site-operators">For site operators</h2>
 <p>If you run a site our crawler reads, here is how it behaves and how to control it.</p>
@@ -85,7 +81,7 @@ Disallow: /</code></p>
 <p>To block one part of it:</p>
 <p><code>User-agent: ThreadWitness
 Disallow: /members/</code></p>
-<p>To ask us to stop reading your site, to grant permission for a community whose terms restrict automated reading, or to report a problem with our crawler, write to <a href="mailto:hello@threadwitness.com?subject=Site%20operator">hello@threadwitness.com</a>. We stop on request and confirm in writing.</p>
+<p>To ask us to stop reading your site, or to report a problem with our crawler, write to <a href="mailto:hello@threadwitness.com?subject=Site%20operator">hello@threadwitness.com</a>. We stop reading a site promptly on request and confirm in writing.</p>
 <h2 id="what-we-do-not-read">What we do not read</h2>
 <ul>
 <li>Review sites and retailer reviews.</li>

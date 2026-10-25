@@ -53,21 +53,31 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <div class="callout" role="note">
 <p><strong>How to read this</strong></p>
 <ul>
-<li>Priority (issues) and Demand (requests) run from 0 to 100.</li>
+<li>Priority (issues) and Demand (requests) run from 0 to 100, printed to one decimal. The Monday email, the one-pager, alerts and the teaser print the same stored score for the same week.</li>
 <li>Reporters are unique people, not posts.</li>
 <li>Badges show whether a sentence is Reported, Aggregated, Inferred or Secondhand.</li>
 <li>S1 to S5 is severity, from safety or security (S1) to cosmetic (S5).</li>
 <li>The verifier tally at the end shows what was removed or rewritten before release.</li>
 </ul>
 </div>
+<p><em>Thread Witness · community issue and feature report</em></p>
 <article class="report" aria-labelledby="northwind-cloud-weekly-report"><h1 id="northwind-cloud-weekly-report">Northwind Cloud weekly report</h1>
-<p><strong>Report</strong> NWC-R-2026-W40 · <strong>Period</strong> 28 Sep to 4 Oct 2026, with a trailing 8-week window from 10 Aug 2026</p>
-<p><strong>Coverage</strong> 6 types of source (issue trackers, vendor forums, Q&amp;A sites, help-center communities, release notes, status pages), 1,904 posts scanned, 412 judged relevant, 187 unique reporters. 162 citations checked; every citation in the released report resolves and was verified. Before release: 5 claims removed, 3 rewritten, 1 downgraded. 0 safety-class topics pending human review.</p>
-<p><strong>Known gaps</strong> One community forum awaiting written permission. Sources that need a paid license, such as Reddit, are not read.</p>
+<p><strong>Report</strong> NWC-2026-10-04-R12 · <strong>Period</strong> 28 Sep to 4 Oct 2026, with a trailing 8-week window from 10 Aug 2026</p>
+<p><strong>Coverage</strong> 6 types of source (issue trackers, vendor forums, Q&amp;A sites, help-center communities, release notes, status pages), 1,904 posts scanned and 412 judged relevant in the trailing 8 weeks, from 187 unique reporters (64 of them this week). 162 citations checked; every citation in the released report resolves and was verified. Before release: 5 claims removed, 3 rewritten, 1 downgraded. 0 safety-class topics pending human review.</p>
+<p><strong>Known gaps</strong> One community forum whose robots.txt disallows our crawler. Sources that need a paid license, such as Reddit, are not read.</p>
 <p>Counts measure public discussion in the sources read, not incidence or failure rates.</p>
 <hr>
 <h2 id="executive-summary">Executive summary</h2>
 <p><strong>Headline.</strong> Sign-in loops on SSO sign-in rose for the second week, and 9 reporters described them this week. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<h3 id="decision-summary">Decision summary</h3>
+<p>The first lines of every report, built from the same database counts as the tables below, so they read the same on every run. Each count names its denominator; the last line is a question, never a conclusion.</p>
+<ol>
+<li><strong>Top issue:</strong> NWC-ISS-4H8T2C, sign-in loop after SSO sign-in: 23 of the 187 unique first-person reporters in the trailing 8 weeks, rising (14 reporters in the last two weeks against 5 in the two before). <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+<li><strong>Concentration:</strong> 17 of those 23 state a Gov tier; 16 state SSO (SAML) sign-in. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+<li><strong>Workaround:</strong> re-uploading the identity-provider metadata is Confirmed (5), and needs an admin. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+<li><strong>Ask:</strong> consistent with cached signing certificates not being replaced at rotation; suggests investigating the 8.14.1 session handling on the Gov tiers. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></li>
+<li><strong>Top request:</strong> NWC-FR-6D1K8V, bulk role assignment from a CSV file: 31 unique requesters in the trailing 8 weeks, 7 of them new this week. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></li>
+</ol>
 <h3 id="top-issues">Top issues</h3>
 <div class="table-wrap" role="region" aria-label="Top issues, table 1" tabindex="0"><table>
 <thead>
@@ -76,7 +86,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <th>Issue</th>
 <th>Severity</th>
 <th class="num">Priority</th>
-<th class="num">Reporters (week / 8 wk)</th>
+<th class="num">Reporters (wk / 8w)</th>
 <th>Trend</th>
 <th>Status</th>
 <th>Why it matters</th>
@@ -87,7 +97,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <td class="id">NWC-ISS-4H8T2C</td>
 <td class="text">Sign-in loop after SSO sign-in, rising after certificate rotation</td>
 <td>S2</td>
-<td class="num">74</td>
+<td class="num">74.2</td>
 <td class="num">9 / 23</td>
 <td class="trend">↑ Rising</td>
 <td>Investigating</td>
@@ -97,9 +107,9 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <td class="id">NWC-ISS-9P2W6M</td>
 <td class="text">Scheduled export jobs stall at 99%</td>
 <td>S3</td>
-<td class="num">58</td>
+<td class="num">58.4</td>
 <td class="num">4 / 17</td>
-<td class="trend">→ Stable</td>
+<td class="trend">→ Flat</td>
 <td>Known</td>
 <td class="text">Reporters describe re-running exports by hand each morning.</td>
 </tr>
@@ -107,9 +117,9 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <td class="id">NWC-ISS-3J7Q5R</td>
 <td class="text">Audit log search returns no results for ranges over 30 days</td>
 <td>S3</td>
-<td class="num">52</td>
+<td class="num">52.1</td>
 <td class="num">2 / 12</td>
-<td class="trend">→ Stable</td>
+<td class="trend">→ n/a (low volume)</td>
 <td>Fixed in 8.14.2</td>
 <td class="text">Fix shipped two weeks ago; too little volume before the fix to compare.</td>
 </tr>
@@ -122,7 +132,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <th>ID</th>
 <th>Request</th>
 <th class="num">Demand</th>
-<th class="num">Requesters (8 wk)</th>
+<th class="num">Requesters (8w)</th>
 <th>Trend</th>
 <th>Linked issue</th>
 </tr>
@@ -131,7 +141,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <tr>
 <td class="id">NWC-FR-6D1K8V</td>
 <td class="text">Bulk role assignment from a CSV file</td>
-<td class="num">66</td>
+<td class="num">66.3</td>
 <td class="num">31</td>
 <td class="trend">↑ Rising</td>
 <td>None</td>
@@ -139,17 +149,17 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <tr>
 <td class="id">NWC-FR-2M5X9B</td>
 <td class="text">Scheduled audit log export to an external log store</td>
-<td class="num">54</td>
+<td class="num">54.0</td>
 <td class="num">19</td>
-<td class="trend">→ Stable</td>
+<td class="trend">→ Flat</td>
 <td class="id">NWC-ISS-3J7Q5R</td>
 </tr>
 <tr>
 <td class="id">NWC-FR-8F3N4T</td>
 <td class="text">Dark mode in the admin console</td>
-<td class="num">41</td>
+<td class="num">41.6</td>
 <td class="num">22</td>
-<td class="trend">→ Stable</td>
+<td class="trend">→ Flat</td>
 <td>None</td>
 </tr>
 </tbody>
@@ -177,7 +187,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 </tr>
 </tbody>
 </table></div>
-<p><strong>Safety flags.</strong> None this week. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
+<p><strong>Safety flags.</strong> No S1 (safety or security) topic with 3+ reporters this week. An S1 candidate that has not been reviewed by our staff would appear here as &ldquo;S1 (unconfirmed severity, pending human review)&rdquo;, never as confirmed. <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
 <p><strong>Fix verification.</strong> NWC-ISS-3J7Q5R: Inconclusive (too little volume before the fix to compare). <span class="badge badge-aggregated"><span class="badge-key" aria-hidden="true">A</span>Aggregated</span></p>
 <p><strong>What changed</strong></p>
 <ul>
@@ -188,8 +198,8 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <hr>
 <h2 id="deep-dive-nwc-iss-4h8t2c-sign-in-loop-after-sso-sign-in-rising-after-certificate-rotation">Deep dive: NWC-ISS-4H8T2C, sign-in loop after SSO sign-in, rising after certificate rotation</h2>
 <p><strong>Also called</strong> SSO redirect loop; login bounce after cert renewal · <strong>Severity</strong> S2 (data loss, lockout or unavailable), supported by 11 independent reporters · <strong>Status</strong> Investigating</p>
-<h3 id="priority-74-of-100-by-factor">Priority 74 of 100, by factor</h3>
-<div class="table-wrap" role="region" aria-label="Priority 74 of 100, by factor, table 4" tabindex="0"><table>
+<h3 id="priority-742-of-100-by-factor">Priority 74.2 of 100, by factor</h3>
+<div class="table-wrap" role="region" aria-label="Priority 74.2 of 100, by factor, table 4" tabindex="0"><table>
 <thead>
 <tr>
 <th>Factor</th>
@@ -424,7 +434,7 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 </tr>
 <tr>
 <td class="text">Switch the tenant to password sign-in until fixed</td>
-<td>Mixed</td>
+<td>Mixed (2)</td>
 <td class="num">2 / 0 / 1</td>
 <td class="num">2</td>
 <td>High</td>
@@ -446,6 +456,16 @@ Northwind Cloud does not exist. Every name, tier, ID, number, error string, date
 <li>Compare tenants that re-uploaded metadata with those that did not, for the 7 reporters who named the rotation date. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></li>
 <li>Check whether 8.14.1 changed session handling for the Gov tiers, given the rise in the week it shipped. <span class="badge badge-inferred"><span class="badge-key" aria-hidden="true">I</span>Inferred</span></li>
 </ul>
+<hr>
+<h2 id="what-the-monday-email-says">What the Monday email says</h2>
+<p>The same week arrives as a 200 to 400 word email with no tracking images, the decision summary first:</p>
+<div class="callout" role="note">
+<p><strong>What to look at first</strong>
+1. Sign-in loop after SSO sign-in [NWC-ISS-4H8T2C]: 9 of this week&rsquo;s 64 unique reporters, 23 reporters in the trailing 8 weeks; rising; most-stated configuration Gov 1 (11 reports); best workaround Confirmed (5). Ask engineering: whether reports began after a recent release or change.
+2. Scheduled export jobs stall at 99% [NWC-ISS-9P2W6M]: 4 of this week&rsquo;s 64 unique reporters, 17 reporters in the trailing 8 weeks; no workaround confirmed. Ask engineering: whether it reproduces under the conditions in the deep dive.</p>
+<p>Top issues: Priority <strong>74.2</strong> · 9/23 reporters · ↑ rising · status investigating · S2</p>
+</div>
+<p>An empty block is left out rather than printed as &ldquo;none&rdquo;, and a product&rsquo;s first week says &ldquo;Baseline established&rdquo; instead of reporting movement against nothing.</p>
 <hr>
 <h2 id="verifier-tally">Verifier tally</h2>
 <div class="table-wrap" role="region" aria-label="Verifier tally, table 9" tabindex="0"><table>

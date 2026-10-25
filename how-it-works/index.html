@@ -50,7 +50,7 @@
 <p>This page explains each step and the rules the report follows.</p>
 <h2 id="the-pipeline">The pipeline</h2>
 <ol>
-<li><strong>Discover.</strong> Each source is read on a schedule through its official API, a published feed, or ordinary rate-limited page requests where its terms permit or do not prohibit automated reading. Each crawl re-reads the last 72 hours to catch late replies. In development: a daily search for new places where your product is discussed. A person reviews each new source&rsquo;s terms before it is ever read.</li>
+<li><strong>Discover.</strong> Each source is read on a schedule through its official API, a published feed, or ordinary rate-limited requests for public pages where its robots.txt allows our crawler. Each crawl re-reads the last 72 hours to catch late replies. In development: a daily search for new places where your product is discussed. A person reviews each new source before it is ever read.</li>
 <li><strong>Pseudonymize.</strong> Author names are replaced with keyed pseudonyms, and email addresses, phone numbers and ID-like strings are removed, before posts enter our database or are sent to a language model. Usernames mentioned inside post text are removed from reports by the verifier.</li>
 <li><strong>Match to product.</strong> Each post is tagged with the products it is about. One thread can be about several products.</li>
 <li><strong>Classify.</strong> Each post is typed: a first-person issue report, a feature request, a workaround, a confirmation or refutation of a workaround, an official response relayed secondhand, praise, or other.</li>
